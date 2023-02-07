@@ -57,8 +57,62 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
    Source: https://paulintrognon.fr/blog/typescript-prettier-eslint-next-js
 2. Add styled components and common theme - Done
    Source: https://medium.com/rbi-tech/theme-with-styled-components-and-typescript-209244ec15a3
-3. Add and test API call proxying - ?
-4. Look for best practices to organize Next.js application - ?
-5. Add Redux/Redux-Saga - ?
-6. Add Axios to use with Redux-Saga - ?
-7. Configure unit tests (views, redux, etc)
+3. Look for best practices to organize Next.js application - Read, got some ideas, added TODO items below.
+   https://codedamn.com/news/nextjs/next-js-best-practices
+   https://www.smashingmagazine.com/2021/11/maintain-large-nextjs-application/
+   https://dev.to/vadorequest/a-2021-guide-about-structuring-your-next-js-project-in-a-flexible-and-efficient-way-472
+   https://giancarlobuomprisco.com/next/a-scalable-nextjs-project-structure
+4. Add Redux/Redux-Saga - ?
+5. Add Axios to use with Redux-Saga - ?
+   https://levelup.gitconnected.com/integrate-apis-in-next-js-with-redux-and-axios-10-step-guide-3d20a2bc9365
+6. Configure unit tests (views, redux, etc). Jest??? - ?
+7. Add and test API call proxying - ?
+8. Using Redux toolkit to reduce redux related boilerplate code https://redux-toolkit.js.org/
+9. Using module path aliases https://unlyed.github.io/next-right-now/reference/module-path-aliases
+10. Enforce import paths. I.e. do not allow import pages or app specific classes from the common code
+
+Optional & things to try:
+
+11. Using Storybook for seprate component development https://storybook.js.org/
+12. Ready for production Next.js practices: https://nextjs.org/docs/going-to-production
+13. Code splitting in Next.js: https://nextjs.org/docs/advanced-features/dynamic-import
+
+## Recommended Next.js project folders structure:
+
+```
+/public
+    favicon.ico
+/src
+    /common
+        /components
+            /elements
+                /[Name]
+                    [Name].tsx
+                    [Name].test.ts
+        /hooks
+        /utils
+    /domain
+    /services
+    /store
+        /actions
+        /reducers
+        /sagas
+    /modules
+        /auth
+            /api
+                AuthAPI.js
+                AuthAPI.test.js
+            /components
+                AuthForm.tsx
+                AuthForm.test.ts
+            auth.js
+    /pages
+        /api
+          /authAPI
+              authAPI.js
+          /[Name]API
+              [Name]API.js
+        _app.tsx
+        _document.tsx
+        index.tsx
+```

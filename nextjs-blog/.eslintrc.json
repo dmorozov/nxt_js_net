@@ -2,8 +2,36 @@
   "plugins": ["@typescript-eslint"],
   "extends": ["next", "next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
   "rules": {
-    // "prefer-const": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error"
-  }
+
+  // Prevent import in commons from the application specific folders
+  //   "import/no-restricted-paths": [
+  //     "error",
+  //     {
+  //       "zones": [
+  //         {
+  //           "target": "./src/core",
+  //           "from": "./src/components"
+  //         },
+  //         {
+  //           "target": "./src/core",
+  //           "from": "./src/lib"
+  //         },
+  //         {
+  //           "target": "./src/core",
+  //           "from": "./src/pages"
+  //         },
+  //         {
+  //           "target": "./src/lib",
+  //           "from": "./src/pages"
+  //         },
+  //         {
+  //           "target": "./src/components",
+  //           "from": "./src/pages"
+  //         }
+  //       ]
+  //     }
+  //   ]
+  // }
 }
