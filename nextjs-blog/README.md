@@ -40,15 +40,23 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Create new project
+## Recommended VSCode plugins:
 
-The project configured based on the article:
-https://paulintrognon.fr/blog/typescript-prettier-eslint-next-js
+- ESLint
+- vscode-styled-components
+- Git History
+- GitLens
+- Git Graph
+- Prettier
+- Prettier ESLint
+- Auto Import
 
 ## TODO:
 
 1. Add eslint and prettify - Done
-2. Add styled components and common theme - ?
+   Source: https://paulintrognon.fr/blog/typescript-prettier-eslint-next-js
+2. Add styled components and common theme - Done
+   Source: https://medium.com/rbi-tech/theme-with-styled-components-and-typescript-209244ec15a3
 3. Add and test API call proxying - ?
 4. Look for best practices to organize Next.js application - ?
 5. Add Redux/Redux-Saga - ?
