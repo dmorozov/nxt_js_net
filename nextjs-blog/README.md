@@ -44,3 +44,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 The project configured based on the article:
 https://paulintrognon.fr/blog/typescript-prettier-eslint-next-js
+
+## TODO:
+
+1. Add eslint and prettify - Done
+2. Add styled components and common theme - ?
+3. Add and test API call proxying - ?
+4. Look for best practices to organize Next.js application - ?
+5. Add Redux/Redux-Saga - ?
+6. Add Axios to use with Redux-Saga - ?
+7. Configure unit tests (views, redux, etc)
