@@ -6,6 +6,8 @@ import Link from 'next/link';
 import Date from '../components/date';
 import { GetStaticProps } from 'next';
 
+export const DDD: number = 'bla bla';
+
 export default function Home({
   allPostsData,
 }: {
