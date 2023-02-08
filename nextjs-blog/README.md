@@ -57,11 +57,19 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
    Source: https://paulintrognon.fr/blog/typescript-prettier-eslint-next-js
 2. Add styled components and common theme - Done
    Source: https://medium.com/rbi-tech/theme-with-styled-components-and-typescript-209244ec15a3
-3. Look for best practices to organize Next.js application - Read, got some ideas, added TODO items below.
+3. Look for best practices to organize Next.js application
    https://codedamn.com/news/nextjs/next-js-best-practices
    https://www.smashingmagazine.com/2021/11/maintain-large-nextjs-application/
    https://dev.to/vadorequest/a-2021-guide-about-structuring-your-next-js-project-in-a-flexible-and-efficient-way-472
    https://giancarlobuomprisco.com/next/a-scalable-nextjs-project-structure
+
+   Done:
+
+   - re-organized app folders
+   - added module path aliases @app and @common
+   - added prettier auto import re-ordering
+   - added TODO items below
+
 4. Add Redux/Redux-Saga - ?
    Interesting article AGAINST using it in the Next.js app: https://javascript.plainenglish.io/should-you-use-redux-in-next-js-5e57201c34da
    Questions:
