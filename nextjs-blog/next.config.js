@@ -6,7 +6,7 @@
 const nextConfig = {
   reactStrictMode: true,
   eslint: {
-    dirs: ['pages', 'lib', 'components'],
+    dirs: ['src'],
   },
 
   async rewrites() {

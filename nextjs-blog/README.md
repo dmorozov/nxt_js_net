@@ -63,6 +63,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
    https://dev.to/vadorequest/a-2021-guide-about-structuring-your-next-js-project-in-a-flexible-and-efficient-way-472
    https://giancarlobuomprisco.com/next/a-scalable-nextjs-project-structure
 4. Add Redux/Redux-Saga - ?
+   Interesting article AGAINST using it in the Next.js app: https://javascript.plainenglish.io/should-you-use-redux-in-next-js-5e57201c34da
+   Questions:
+
+   - What to use for state management (https://recoiljs.org/ or Zustand or just React Context API)? What is best works with Next.js?
+   - What to use for async server calls (fetch, react-query, Axios)? What is best works with Next.js?
+
 5. Add Axios to use with Redux-Saga - ?
    https://levelup.gitconnected.com/integrate-apis-in-next-js-with-redux-and-axios-10-step-guide-3d20a2bc9365
 6. Configure unit tests (views, redux, etc). Jest??? - ?
