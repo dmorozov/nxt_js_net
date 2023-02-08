@@ -1,11 +1,13 @@
-import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
-import Link from 'next/link';
-import Date from '../components/date';
 import { GetStaticProps } from 'next';
-import { Button, ButtonVariant } from 'my-app/components/button';
+import Head from 'next/head';
+import Link from 'next/link';
+
+import Date from '@common/components/date';
+
+import { Button, ButtonVariant } from '@app/common/components/button';
+import Layout, { siteTitle } from '@app/components/layout/layout';
+import { getSortedPostsData } from '@app/services/posts.service';
+import utilStyles from '@app/styles/utils.module.css';
 
 export default function Home({
   allPostsData,

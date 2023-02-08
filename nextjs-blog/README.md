@@ -83,7 +83,7 @@ Optional & things to try:
 12. Ready for production Next.js practices: https://nextjs.org/docs/going-to-production
 13. Code splitting in Next.js: https://nextjs.org/docs/advanced-features/dynamic-import
 
-## Recommended Next.js project folders structure:
+## Example Next.js project folders structure:
 
 ```
 /public

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 export enum ButtonVariant {
   PRIMARY,
   SECONDARY,

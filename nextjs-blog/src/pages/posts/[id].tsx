@@ -1,10 +1,12 @@
-import Layout from '../../components/layout';
-import { getAllPostIds, getPostData } from '../../lib/posts';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
-import Date from '../../components/date';
-import utilStyles from '../../styles/utils.module.css';
-import { GetStaticProps, GetStaticPaths } from 'next';
-import { Button, ButtonVariant } from 'my-app/components/button';
+
+import { Button, ButtonVariant } from '@common/components/button';
+import Date from '@common/components/date';
+
+import Layout from '@app/components/layout/layout';
+import { getAllPostIds, getPostData } from '@app/services/posts.service';
+import utilStyles from '@app/styles/utils.module.css';
 
 export default function Post({
   postData,
