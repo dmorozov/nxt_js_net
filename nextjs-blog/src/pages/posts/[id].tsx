@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { Button, ButtonVariant } from '@common/components/button';
 import Date from '@common/components/date';
 
-import Layout from '@app/components/layout/layout';
+import Layout from '@app/components/layout.component/layout.component';
 import { getAllPostIds, getPostData } from '@app/services/posts.service';
 import utilStyles from '@app/styles/utils.module.css';
 

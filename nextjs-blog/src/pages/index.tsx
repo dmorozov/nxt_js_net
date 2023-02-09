@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Date from '@common/components/date';
 
 import { Button, ButtonVariant } from '@app/common/components/button';
-import Layout, { siteTitle } from '@app/components/layout/layout';
+import Layout, { siteTitle } from '@app/components/layout.component/layout.component';
 import { getSortedPostsData } from '@app/services/posts.service';
 import utilStyles from '@app/styles/utils.module.css';
 
@@ -44,6 +44,7 @@ export default function Home({
             </li>
           ))}
         </ul>
+        <Link href={`/todo`}>ToDo</Link>
       </section>
     </Layout>
   );

@@ -77,6 +77,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
    - What to use for state management (https://recoiljs.org/ or Zustand or just React Context API)? What is best works with Next.js?
    - What to use for async server calls (fetch, react-query, Axios)? What is best works with Next.js?
 
+   Outcomes:
+
+   - Recoil is very neat state management library but it seems that development tools part is still not stanle. The functions specified in the documentation
+     marked as \_UNSTABLE suffix. The core state management claims to be production ready.
+   - I saw recommendation to use Context API in many many articles. But it just shows that people had never build a big applications. All my concerns about that highlighted in this
+     article: https://www.smashingmagazine.com/2021/08/state-management-nextjs/ which I'm fully agree with.
+   - Some articles are pointing to React-Query as an option (new name seems to be TanStack Query) or SWR
+
 5. Add Axios to use with Redux-Saga - ?
    https://levelup.gitconnected.com/integrate-apis-in-next-js-with-redux-and-axios-10-step-guide-3d20a2bc9365
 6. Configure unit tests (views, redux, etc). Jest??? - ?
