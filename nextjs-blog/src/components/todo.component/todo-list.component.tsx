@@ -1,6 +1,7 @@
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 
+import Card from '@app/common/components/card';
 import { filteredTodoListState } from '@app/store/todo';
 
 import TodoItemCreator from './todo-item-creator.component';
@@ -16,7 +17,7 @@ export default function TodoListComponent() {
   const todoList = useRecoilValue(filteredTodoListState);
 
   return (
-    <>
+    <Card>
       <TodoListStats />
 
       <TodoItemCreator />
@@ -31,6 +32,6 @@ export default function TodoListComponent() {
       <br />
       <br />
       <br />
-    </>
+    </Card>
   );
 }

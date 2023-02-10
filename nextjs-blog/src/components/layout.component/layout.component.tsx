@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import styled from 'styled-components';
+
+import { StyledLink } from '@app/common/components/styled-link';
 
 const Container = styled.div`
   padding: 0 0.5rem;
@@ -60,7 +61,8 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
         <main>{children}</main>
         {!home && (
           <div>
-            <Link href="/">← Back to home</Link>
+            <StyledLink href="/" name="← Back to home" />
+            {/* <Link href="/">← Back to home</Link> */}
           </div>
         )}
       </Main>
