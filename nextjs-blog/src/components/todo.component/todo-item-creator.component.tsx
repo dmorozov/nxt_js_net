@@ -1,6 +1,8 @@
 import { ChangeEvent, useState } from 'react';
 import { useSetRecoilState } from 'recoil';
 
+import { Button } from '@app/common/components/button';
+import { TextInput } from '@app/common/components/textInput';
 import { todoListState } from '@app/store/todo';
 
 // utility for creating unique Id
@@ -9,7 +11,7 @@ function getId() {
   return id++;
 }
 
-export default function TodoItemCreator() {
+export default function TodoItemCreatorComponent() {
   const [inputValue, setInputValue] = useState('');
   const setTodoList = useSetRecoilState(todoListState);
 
@@ -30,9 +32,9 @@ export default function TodoItemCreator() {
   };
 
   return (
-    <div>
-      <input type="text" value={inputValue} onChange={onChange} />
-      <button onClick={addItem}>Add</button>
-    </div>
+    <span>
+      <TextInput type="text" value={inputValue} onChange={onChange} placeholder="Enter new todo" />
+      <Button onClick={addItem}>Add</Button>
+    </span>
   );
 }

@@ -12,6 +12,12 @@ interface IProps {
 export const Button = styled.button<IProps>`
   margin: 8px;
   border-radius: ${(props) => props.theme.borderRadius};
+  // float: right;
+  border: 2px solid palevioletred;
+  padding: 3px 10px;
+  outline: none;
+  cursor: pointer;
+
   ${(props) => {
     switch (props.variant) {
       case ButtonVariant.SECONDARY:

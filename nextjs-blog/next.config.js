@@ -5,6 +5,9 @@
  **/
 const nextConfig = {
   reactStrictMode: true,
+  compiler: {
+    styledComponents: true,
+  },
   eslint: {
     dirs: ['src'],
   },
@@ -16,7 +19,22 @@ const nextConfig = {
         destination: 'http://localhost:5000/api/:path*',
       },
     ];
-  }
-}
+  },
+};
 
 module.exports = nextConfig;
+
+// safely ignore recoil warning messages in dev mode (triggered by HMR)
+if (process.env.NODE_ENV === 'development') {
+  function interceptStdout(text) {
+    if (text.includes('Duplicate atom key')) {
+      return '';
+    }
+    return text;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const intercept = require('intercept-stdout');
+
+  intercept(interceptStdout);
+}

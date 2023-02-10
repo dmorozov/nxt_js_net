@@ -1,9 +1,19 @@
 import { ChangeEventHandler } from 'react';
 import { useRecoilState } from 'recoil';
+import styled from 'styled-components';
 
+import { Button } from '@app/common/components/button';
+import { TextInput } from '@app/common/components/textInput';
 import { todoListState } from '@app/store/todo';
 
 import { ToDoItem } from '../../domain/todo';
+
+const StyledList = styled.li`
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 10px;
+`;
 
 export default function TodoItemComponent({ item }: { item: ToDoItem }) {
   const [todoList, setTodoList] = useRecoilState(todoListState);
@@ -34,11 +44,13 @@ export default function TodoItemComponent({ item }: { item: ToDoItem }) {
   };
 
   return (
-    <div>
-      <input type="text" value={item.text} onChange={editItemText} />
+    <StyledList>
       <input type="checkbox" checked={item.isComplete} onChange={toggleItemCompletion} />
-      <button onClick={deleteItem}>X</button>
-    </div>
+      <TextInput type="text" value={item.text} onChange={editItemText} />
+      <Button type="button" onClick={deleteItem}>
+        Delete
+      </Button>
+    </StyledList>
   );
 }
 

@@ -1,17 +1,48 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
+import styled from 'styled-components';
 
-import utilStyles from '@app/styles/utils.module.css';
+const Container = styled.div`
+  padding: 0 0.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 100vh;
+`;
+const Main = styled.main`
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
-import styles from './layout.module.css';
+const Title = styled.h1`
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+  text-decoration: none;
+  a {
+    color: ${({ theme }) => theme.palette.secondary.main};
+    text-decoration: none;
+    &:hover,
+    :focus,
+    :active {
+      text-decoration: underline;
+    }
+  }
+`;
 
 const name = '[Your Name]';
 export const siteTitle = 'Next.js Sample Website';
 
 export default function Layout({ children, home }: { children: React.ReactNode; home?: boolean }) {
   return (
-    <div className={styles.container}>
+    <Container>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Learn how to build a personal website using Next.js" />
@@ -24,45 +55,15 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/profile.jpg"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt={name}
-              />
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
-                {name}
-              </Link>
-            </h2>
-          </>
+      <Main>
+        <Title>{name}</Title>
+        <main>{children}</main>
+        {!home && (
+          <div>
+            <Link href="/">← Back to home</Link>
+          </div>
         )}
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">← Back to home</Link>
-        </div>
-      )}
-    </div>
+      </Main>
+    </Container>
   );
 }

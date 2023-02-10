@@ -2,7 +2,7 @@ import { useRecoilValue } from 'recoil';
 
 import { todoListStatsState } from '@app/store/todo';
 
-export default function TodoListStats() {
+export default function TodoListStatsComponent() {
   const { totalNum, totalCompletedNum, totalUncompletedNum, percentCompleted } = useRecoilValue(todoListStatsState);
 
   const formattedPercentCompleted = Math.round(percentCompleted);
