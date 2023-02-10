@@ -138,3 +138,15 @@ Optional & things to try:
         _document.tsx
         index.tsx
 ```
+
+#### Install dependencies with yarn
+
+```html
+yarn
+```
+
+#### Using Plop JS
+
+```html
+yarn generate
+```

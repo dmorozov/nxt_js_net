@@ -5,8 +5,12 @@
  **/
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
   compiler: {
-    styledComponents: true,
+    styledComponents: {
+      displayName: true,
+      ssr: true,
+    },
   },
   eslint: {
     dirs: ['src'],
