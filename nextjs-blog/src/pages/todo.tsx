@@ -8,9 +8,9 @@ export default function TodoListPage() {
   return (
     <Layout>
       <Head>
-        <title>TODO</title>
+        <title>TODO List</title>
       </Head>
-      <article>
+      <article title="TODO">
         <h1 className={utilStyles.headingXl}>TODO</h1>
         <TodoList />
       </article>
