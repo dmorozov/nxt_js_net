@@ -85,6 +85,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
      article: https://www.smashingmagazine.com/2021/08/state-management-nextjs/ which I'm fully agree with.
    - Some articles are pointing to React-Query as an option (new name seems to be TanStack Query) or SWR
 
+   As the result after reading multiple articles and comparison between different state management libraries for the React I decided to go with the Recoil.
+   This is very type safe and performant library. The dev tools part is still under development but the core of the library is in use by multiple projects within Facebook.
+   Some very good cource here: https://learnrecoil.com/course
+
 5. Add Axios to use with Redux-Saga - ?
    https://levelup.gitconnected.com/integrate-apis-in-next-js-with-redux-and-axios-10-step-guide-3d20a2bc9365
 6. Configure unit tests (views, redux, etc). Jest??? - ?
