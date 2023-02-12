@@ -1,9 +1,21 @@
-import { Container } from './{{pascalCase name}}.style'
+import Head from 'next/head';
+import styled from 'styled-components';
 
-const {{pascalCase name}} = () => (
-  <Container>
-    <h1>{{pascalCase name}}</h1>
-  </Container>
-)
+import Layout from '@app/components/layout.component/layout.component';
+import utilStyles from '@app/styles/utils.module.css';
 
-export default {{pascalCase name}}
+const Container = styled.div``;
+
+export default function {{pascalCase name}}() {
+  return (
+    <Layout>
+      <Head>
+        <title>{{pascalCase name}}</title>
+      </Head>
+      <article title="{{pascalCase name}}">
+        <h1 className={utilStyles.headingXl}>{{pascalCase name}}</h1>
+        <Container>{/* Components here */}</Container>
+      </article>
+    </Layout>
+  );
+}

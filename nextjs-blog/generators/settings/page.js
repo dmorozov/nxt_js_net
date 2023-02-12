@@ -10,18 +10,13 @@ module.exports = {
   actions: [
     {
       type: 'add',
-      path: '../src/pages/{{pascalCase name}}/index.tsx',
+      path: '../src/pages/{{camelCase name}}.tsx',
       templateFile: 'templates/page.tsx.hbs',
     },
     {
       type: 'add',
-      path: '../src/pages/{{pascalCase name}}/{{pascalCase name}}.style.ts',
-      templateFile: 'templates/pageStyle.ts.hbs',
-    },
-    {
-      type: 'add',
-      path: '../src/pages/{{pascalCase name}}/__tests__/index.spec.tsx',
-      templateFile: 'templates/pageTest.tsx.hbs',
+      path: '../src/__tests__/{{camelCase name}}.spec.tsx',
+      templateFile: 'templates/page-test.tsx.hbs',
     },
   ],
-}
+};
