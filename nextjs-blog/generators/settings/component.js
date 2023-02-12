@@ -1,5 +1,5 @@
 module.exports = {
-  description: 'Creates a new component',
+  description: 'Creates a new app component',
   prompts: [
     {
       type: 'input',
@@ -10,18 +10,18 @@ module.exports = {
   actions: [
     {
       type: 'add',
-      path: '../src/components/{{pascalCase name}}/index.tsx',
-      templateFile: 'templates/index.tsx.hbs',
+      path: '../src/components/{{dashCase name}}.component/{{dashCase name}}.component.tsx',
+      templateFile: 'templates/components.tsx.hbs',
     },
     {
       type: 'add',
-      path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.style.ts',
-      templateFile: 'templates/style.ts.hbs',
+      path: '../src/components/{{dashCase name}}.component/__tests__/index.spec.tsx',
+      templateFile: 'templates/component-test.tsx.hbs',
     },
     {
       type: 'add',
-      path: '../src/components/{{pascalCase name}}/__tests__/index.spec.tsx',
-      templateFile: 'templates/test.tsx.hbs',
+      path: '../src/components/{{dashCase name}}.component/index.ts',
+      templateFile: 'templates/component-index.ts.hbs',
     },
   ],
-}
+};

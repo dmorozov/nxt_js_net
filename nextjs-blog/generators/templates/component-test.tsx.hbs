@@ -1,0 +1,26 @@
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
+import { RecoilRoot } from 'recoil';
+import { ThemeProvider } from 'styled-components';
+
+import { darkTheme } from '@app/styles/theme';
+
+import { {{pascalCase name}} } from '../';
+
+describe('<{{pascalCase name}} />', () => {
+  it('should render the heading', () => {
+    render(
+      <ThemeProvider theme={darkTheme}>
+        <RecoilRoot>
+          <{{pascalCase name}} />
+        </RecoilRoot>
+      </ThemeProvider>
+    );
+
+    const heading = screen.getByRole('heading', {
+      name: /{{pascalCase name}}/i,
+    });
+
+    expect(heading).toBeInTheDocument();
+  });
+});
