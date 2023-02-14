@@ -33,8 +33,16 @@ export default function TodoItemCreatorComponent() {
 
   return (
     <span>
-      <TextInput type="text" value={inputValue} onChange={onChange} placeholder="Enter new todo" />
-      <Button onClick={addItem}>Add</Button>
+      <TextInput
+        type="text"
+        value={inputValue}
+        onChange={onChange}
+        placeholder="Enter new todo"
+        data-testid="new-todo-item-text"
+      />
+      <Button data-testid="new-todo-item-btn" onClick={addItem}>
+        Add
+      </Button>
     </span>
   );
 }

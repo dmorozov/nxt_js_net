@@ -70,18 +70,18 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
    - added prettier auto import re-ordering
    - added TODO items below
 
-4. Add Redux/Redux-Saga - ?
+4. Add Redux/Redux-Saga - Done. Added Recoil as client side state management.
    Interesting article AGAINST using it in the Next.js app: https://javascript.plainenglish.io/should-you-use-redux-in-next-js-5e57201c34da
    Questions:
 
    - What to use for state management (https://recoiljs.org/ or Zustand or just React Context API)? What is best works with Next.js?
    - What to use for async server calls (fetch, react-query, Axios)? What is best works with Next.js?
 
-   Outcomes:
+   Final decision:
 
-   - Recoil is very neat state management library but it seems that development tools part is still not stanle. The functions specified in the documentation
-     marked as \_UNSTABLE suffix. The core state management claims to be production ready.
-   - I saw recommendation to use Context API in many many articles. But it just shows that people had never build a big applications. All my concerns about that highlighted in this
+   - Recoil is very neat state management library but it seems that development tools part is still not stable. The functions specified in the documentation
+     marked as "\_UNSTABLE" suffix. The core state management claims to be production ready.
+   - I saw recommendation to use Context API in many many articles. But it just shows that people had never built a big applications. All my concerns about that highlighted in this
      article: https://www.smashingmagazine.com/2021/08/state-management-nextjs/ which I'm fully agree with.
    - Some articles are pointing to React-Query as an option (new name seems to be TanStack Query) or SWR
 
@@ -89,13 +89,20 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
    This is very type safe and performant library. The dev tools part is still under development but the core of the library is in use by multiple projects within Facebook.
    Some very good cource here: https://learnrecoil.com/course
 
-5. Add Axios to use with Redux-Saga - ?
-   https://levelup.gitconnected.com/integrate-apis-in-next-js-with-redux-and-axios-10-step-guide-3d20a2bc9365
-6. Configure unit tests (views, redux, etc). Jest??? - ?
-7. Add and test API call proxying - ?
-8. Using Redux toolkit to reduce redux related boilerplate code https://redux-toolkit.js.org/
-9. Using module path aliases https://unlyed.github.io/next-right-now/reference/module-path-aliases
-10. Enforce import paths. I.e. do not allow import pages or app specific classes from the common code
+5. Add Axios/React Query - Use Axios with Recoil.js
+   Opted out to do not use React Query to avoid multiple issues.
+   Recoil: You can implement refetching on mutation, initial fetch loader, fetch without loader, fetch on focus, etc easily in Recoil with atomEffect, which let you control bi-directional data fetching.
+   Additionally, it seems for the more real world usage (global 401 handling, JWT security etc) for API calls you still need to use something like Axios.
+   Not clear why I need "React Query" at all especially when I have caching at the Recoil level.
+   https://lazypandatech.com/blog/NextJs/50/REST-API-Call-using-Axios-Interceptor-in-React-NextJs/
+   https://prateeksurana.me/blog/mastering-data-fetching-with-react-query-and-next-js/
+   For the SSR: https://nextjs.org/docs/api-routes/introduction
+
+6. Configure unit tests (views, etc). I had added Jest with some simple test as POC. Need ato add tests for Recoil, more complex component unit tests
+7. Add Cypress test framework for End-To-End testing ???
+8. Add and test API call proxying - Added in Next.js app
+9. Using module path aliases https://unlyed.github.io/next-right-now/reference/module-path-aliases - Done. Added @app and @common
+10. Enforce import paths. I.e. do not allow import pages or app specific classes from the common code - TODO: fix in .eslintrc.json
 
 Optional & things to try:
 
