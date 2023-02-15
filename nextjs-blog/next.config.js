@@ -15,6 +15,12 @@ const nextConfig = {
   eslint: {
     dirs: ['src'],
   },
+  modularizeImports: {
+    lodash: {
+      transform: 'lodash/{{member}}',
+      preventFullImport: true,
+    },
+  },
 
   async rewrites() {
     return [
@@ -28,15 +34,15 @@ const nextConfig = {
 
 module.exports = nextConfig;
 
+function interceptStdout(text) {
+  if (text.includes('Duplicate atom key')) {
+    return '';
+  }
+  return text;
+}
+
 // safely ignore recoil warning messages in dev mode (triggered by HMR)
 if (process.env.NODE_ENV === 'development') {
-  function interceptStdout(text) {
-    if (text.includes('Duplicate atom key')) {
-      return '';
-    }
-    return text;
-  }
-
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const intercept = require('intercept-stdout');
 

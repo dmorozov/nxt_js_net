@@ -1,27 +1,35 @@
----
-languages:
-- csharp
-- aspx-csharp
-page_type: sample
-description: "This is a sample application that you can use to follow along with the Run a RESTful API with CORS in Azure App Service tutorial."
-products:
-- azure
-- aspnet-core
-- azure-app-service
----
-
-# ASP.NET Core API sample for Azure App Service
-
-This is a sample application that you can use to follow along with the tutorial at 
-[Run a RESTful API with CORS in Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api). 
+# Sample ASP.NET Core API
 
 ## License
-
 See [LICENSE](https://github.com/Azure-Samples/dotnet-core-api/blob/master/LICENSE.md).
-
-## Contributing
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
   
+## Set up
+1. https://dotnet.microsoft.com/en-us/download to download and install .NET 7.0
+2. https://dot.net/core-sdk-vscode to download and install the .NET Core SDK.
+3. Install recommended VSCode extentions: https://code.visualstudio.com/docs/languages/dotnet
+At least, the following extentions:
+- .NET Core Tools
+- .NET Extension Pack
+- .NET Core Extension Pack
 
-https://dot.net/core-sdk-vscode to download and install the .NET Core SDK.
+4. Restart VSCode
+5. Run in the terminal
+```dotnet restore```
+6. Menu "Run" -> "Start Debugging"
+
+## Run
+```dotnet run```
+
+## Docker
+### Create image
+```docker build -t todoapi .```
+### Start container
+```docker run --publish 5000:5000 dotnetapp```
+
+
+## Learning
+1. Run ASP.NET Core 3.1 Apps in Docker with HTTPS
+https://www.youtube.com/watch?v=lcaDDxJv260
+2. .NET Core 3.1 MVC REST API - Full Course
+youtube.com/watch?v=fmvcAzHpsk8
+

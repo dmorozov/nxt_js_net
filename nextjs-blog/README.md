@@ -109,6 +109,9 @@ Optional & things to try:
 11. Using Storybook for seprate component development https://storybook.js.org/
 12. Ready for production Next.js practices: https://nextjs.org/docs/going-to-production
 13. Code splitting in Next.js: https://nextjs.org/docs/advanced-features/dynamic-import
+14. Read more about getInitialProps, getStaticProps, getStaticPaths, getServerSideProps - Done
+    Good video: https://www.youtube.com/watch?v=J1E2-hJZUVg&t=41s
+    https://nextjs.org/docs/basic-features/data-fetching/overview
 
 ## Example Next.js project folders structure:
 

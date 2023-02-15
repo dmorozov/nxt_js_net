@@ -37,35 +37,27 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error"
+    "@typescript-eslint/no-explicit-any": "error",
 
     // Prevent import in commons from the application specific folders
-    //   "import/no-restricted-paths": [
-    //     "error",
-    //     {
-    //       "zones": [
-    //         {
-    //           "target": "./src/core",
-    //           "from": "./src/components"
-    //         },
-    //         {
-    //           "target": "./src/core",
-    //           "from": "./src/lib"
-    //         },
-    //         {
-    //           "target": "./src/core",
-    //           "from": "./src/pages"
-    //         },
-    //         {
-    //           "target": "./src/lib",
-    //           "from": "./src/pages"
-    //         },
-    //         {
-    //           "target": "./src/components",
-    //           "from": "./src/pages"
-    //         }
-    //       ]
-    //     }
-    //   ]
+    "import/no-restricted-paths": [
+      "error",
+      {
+        "zones": [
+          {
+            "target": "./src/components",
+            "from": "./src/pages"
+          },
+          {
+            "target": "./src/common",
+            "from": "./src/pages"
+          },
+          {
+            "target": "./src/common",
+            "from": "./src/components"
+          }
+        ]
+      }
+    ]
   }
 }
