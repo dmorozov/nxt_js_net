@@ -1,5 +1,5 @@
-# https://hub.docker.com/_/microsoft-dotnet
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
+# The FIRST stage we take "fat" image contains all the dependencies to build the .NET Core app
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
 WORKDIR /app
 
 # copy csproj and restore as distinct layers
@@ -12,8 +12,8 @@ COPY . ./
 # RUN dotnet publish -c Release -o /app -r linux-x64 --self-contained false --no-restore
 RUN dotnet publish -c Release -o out
 
-# final stage/image
+# The SECOND stage we take small image we can use to run our .NET Core app
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS final
 WORKDIR /app
-COPY --from=build /app/out .
+COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "TodoApi.dll"]

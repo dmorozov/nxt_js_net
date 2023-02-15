@@ -1,0 +1,14 @@
+version: '3'
+services: 
+  todoapi:
+    build: .
+    ports:
+    - "8000:80"
+    - "8001:443"
+    environment:
+      ASPNETCORE_URLS: "https://+;http://+"
+      ASPNETCORE_HTTPS_PORT: "8001"
+      ASPNETCORE_ENVIRONMENT: Development
+    volumes:
+      - $HOME/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+      - $HOME/.aspnet/https:/root/.aspnet/https:ro

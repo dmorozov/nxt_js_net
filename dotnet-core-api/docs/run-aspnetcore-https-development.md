@@ -76,8 +76,11 @@ Configure application secrets, for the certificate:
 ```console
 dotnet user-secrets -p aspnetapp\aspnetapp.csproj set "Kestrel:Certificates:Development:Password" "<CREDENTIAL_PLACEHOLDER>"
 ```
+> Note: in OsX some special symbols (like "!") are not escaped in the password failing the dotnet user-secrets command
 
 > Note: The password must match the password used for the certificate.
+
+> Note: Generated user secrets location in MacOS/Linux is ~/.microsoft/usersecrets/<user_secrets_id>/secrets.json
 
 Build a container image:
 
